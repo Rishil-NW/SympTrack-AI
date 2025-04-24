@@ -43,7 +43,7 @@ llm = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo-0125")
 
 # Lambda to get question
 _search_query = RunnableLambda(lambda x: x["question"])
-
+graph = Neo4jGraph()
 # Function to retrieve structured data
 def structured_retriever(question: str) -> str:
     response = graph.query(
